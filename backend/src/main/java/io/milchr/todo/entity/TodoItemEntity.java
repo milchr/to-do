@@ -1,9 +1,6 @@
 package io.milchr.todo.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
@@ -12,6 +9,8 @@ import lombok.Data;
 public class TodoItemEntity {
     @Id
     @Column(name = "ID")
+    @GeneratedValue(generator="todo_item_seq", strategy = GenerationType.AUTO)
+    @SequenceGenerator(name="todo_item_seq", allocationSize=1)
     private Long id;
 
     @Column(name = "TITLE")

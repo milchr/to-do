@@ -35,16 +35,18 @@ public class TodoItemFacade {
     }
 
     @Transactional
-    public TodoItemDto createTodoItem(TodoItemDto todoItem) {
-        TodoItemEntity todoItemEntity = mapper.mapDtoToEntity(todoItem);
+    public TodoItem createTodoItem(TodoItem todoItem) {
+        log.info("createTodoItem -> {}", todoItem);
+        TodoItemEntity todoItemEntity = mapper.mapDtoToEntity(mapper.mapModelToDto(todoItem));
         todoItemService.save(todoItemEntity);
-        return mapper.mapEntityToDto(todoItemEntity);
+        return mapper.mapEntityToModel(todoItemEntity);
     }
 
     @Transactional
-    public TodoItemDto updateTodoItem(TodoItemDto todoItem) {
-        TodoItemEntity todoItemEntity = mapper.mapDtoToEntity(todoItem);
+    public TodoItem updateTodoItem(TodoItem todoItem) {
+        log.info("updateTodoItem -> {}", todoItem);
+        TodoItemEntity todoItemEntity = mapper.mapDtoToEntity(mapper.mapModelToDto(todoItem));
         todoItemService.save(todoItemEntity);
-        return mapper.mapEntityToDto(todoItemEntity);
+        return mapper.mapEntityToModel(todoItemEntity);
     }
 }

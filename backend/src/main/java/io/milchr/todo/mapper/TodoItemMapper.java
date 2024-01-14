@@ -13,6 +13,7 @@ public interface TodoItemMapper {
     TodoItem mapEntityToModel(TodoItemEntity todoItemEntity);
     List<TodoItem> mapEntityToModel(List<TodoItemEntity> todoItemEntities);
     TodoItemDto mapEntityToDto(TodoItemEntity todoItemEntity);
-    TodoItemDto mapModelToDto(TodoItem todoItemDto);
+    TodoItemDto mapModelToDto(TodoItem todoItem);
+    TodoItem mapDtoToModel(TodoItemDto todoItemDto);
     TodoItemEntity mapDtoToEntity(TodoItemDto todoItemDto);
 }

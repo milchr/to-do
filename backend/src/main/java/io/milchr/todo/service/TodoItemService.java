@@ -22,7 +22,7 @@ public class TodoItemService implements ITodoItemService {
 
     @Override
     public Page<TodoItemEntity> findPage(Integer pageNumber) {
-        return todoItemRepository.findAll(PageRequest.of(pageNumber, 10));
+        return todoItemRepository.findAll(PageRequest.of(pageNumber != null ? pageNumber : 0, 10));
     }
 
     @Override
