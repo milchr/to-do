@@ -1,0 +1,43 @@
+body, html {
+    height:  100%;
+    margin:  0px auto;
+    padding: 0px auto;
+
+}
+
+#app {
+    height:  100%;
+    margin:  0px auto;
+    padding: 0px auto;
+    
+    
+}
+
+.back {
+    background-color: gainsboro;
+    height:     auto;
+    min-height: 80%;
+    margin:     0px auto;
+    padding:    0px auto;
+
+}
+
+
+.navbar-brand {
+    margin-left: 5%;
+    margin-right: 7%;
+}
+
+.nav-item {
+    padding-right: 7px;
+}
+
+
+.border-top {
+    border-top: 1px solid #000000 !important;
+}
+
+.container {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
