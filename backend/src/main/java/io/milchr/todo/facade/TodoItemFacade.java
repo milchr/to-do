@@ -49,4 +49,9 @@ public class TodoItemFacade {
         todoItemService.save(todoItemEntity);
         return mapper.mapEntityToModel(todoItemEntity);
     }
+
+    public void deleteTodoItem(Long id) {
+        log.info("deleteTodoItem -> {}", id);
+        todoItemService.delete(id);
+    }
 }
