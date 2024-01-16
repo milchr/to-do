@@ -1,0 +1,25 @@
+<div class="col-md-12" id="frm">
+    <div class="card card-container">
+      <h2 id="edit">Create task</h2>
+ 
+    <form name="form" (ngSubmit)="onSubmit()" #f="ngForm" novalidate>
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" name="title" [(ngModel)]="form.title" required #title="ngModel"/>
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea type="text" class="form-control" name="description" [(ngModel)]="form.description" #description="ngModel"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="description">Done</label>
+        <textarea type="text" class="form-control" name="description" [(ngModel)]="form.isDone" #description="ngModel"></textarea>
+      </div>
+    <div class="form-group" id="btn">
+      <button class="btn btn-primary btn-block">
+        Create
+      </button>
+    </div>
+  </form>
+ </div>
+ </div>

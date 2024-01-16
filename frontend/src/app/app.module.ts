@@ -9,11 +9,13 @@ import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TodoItemComponent } from './components/todo-item/todo-item.component';
 import { TodoItemService } from './services/todo-item.service';
+import { NewTodoItemComponent } from './components/todo-item/new-todo-item/new-todo-item.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
+        NewTodoItemComponent,
         TodoItemComponent,
         NavbarComponent
       ],
