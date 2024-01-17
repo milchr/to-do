@@ -20,5 +20,5 @@ public class TodoItem {
     private String description;
 
     @Schema(description = "Todo item state", example = "true")
-    private Boolean isDone;
+    private boolean isDone;
 }
