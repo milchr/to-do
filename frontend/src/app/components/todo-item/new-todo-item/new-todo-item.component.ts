@@ -19,19 +19,17 @@ export class NewTodoItemComponent {
 
   form: any = {
     title: null,
-    description: null,
-    isDone: null,
+    description: null
   };
  
   constructor(private todoItemService: TodoItemService, private router: Router) {
    }
 
   onSubmit(): void {
-    const { title, description, isDone } = this.form;
+    const { title, description } = this.form;
     const todoItem = {} as TodoItem;
     todoItem.title = title;
     todoItem.description = description;
-    todoItem.isDone = isDone;
 
     this.createTodoItem(todoItem);
   }

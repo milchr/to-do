@@ -18,7 +18,23 @@
     <div class="row no-gutters">
        <div class="col-10">
           <div class="col-md-12">
-            <div *ngFor="let item of todoItems"><p>{{ item.title }}</p></div>
+            <div *ngFor="let item of todoItems">
+               <div class="task">
+                  <p>{{ item.title }}</p>
+                  <p>{{ item.description }}</p>
+                  <p>{{ item.isDone }}</p>
+                  <div class="form-group" id="btn">
+                     <button class="btn btn-primary btn-block">
+                       Edit
+                     </button>
+                  </div>
+                  <div class="form-group" id="btn">
+                     <button class="btn btn-primary btn-block">
+                       Delete
+                     </button>
+                  </div>
+               </div>
+            </div>
           </div>
     </div>
  
