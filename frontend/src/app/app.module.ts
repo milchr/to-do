@@ -10,8 +10,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { TodoItemComponent } from './components/todo-item/todo-item.component';
 import { TodoItemService } from './services/todo-item.service';
 import { NewTodoItemComponent } from './components/todo-item/new-todo-item/new-todo-item.component';
-import { AuthRegisterComponent } from './components/auth-register/auth-register.component';
-import { AuthRegisterService } from './services/auth-register.service';
+import { AuthRegisterComponent } from './components/auth/auth-register/auth-register.component';
+import { AuthLoginComponent } from './components/auth/auth-login/auth-login.component';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
     declarations: [
@@ -20,7 +21,8 @@ import { AuthRegisterService } from './services/auth-register.service';
         NewTodoItemComponent,
         TodoItemComponent,
         NavbarComponent,
-        AuthRegisterComponent
+        AuthRegisterComponent,
+        AuthLoginComponent
       ],
     imports: [
         BrowserModule,
@@ -30,7 +32,7 @@ import { AuthRegisterService } from './services/auth-register.service';
       ],
     providers: [
         TodoItemService,
-        AuthRegisterService
+        AuthService
       ],
     bootstrap: [AppComponent]
 })

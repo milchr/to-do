@@ -7,13 +7,16 @@ import { AuthUser } from '../models/auth-user';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthRegisterService {
-
+export class AuthService {
   private apiServerUrl = environment.apiBaseUrl;
 
   constructor(private http: HttpClient) { }
 
   public register(authUser: AuthUser): Observable<AuthUser> {
     return this.http.post<AuthUser>(`${this.apiServerUrl}/auth/register`, authUser);
+  }
+
+  public authenticate(authUser: AuthUser): Observable<AuthUser> {
+    return this.http.post<AuthUser>(`${this.apiServerUrl}/auth/authenticate`, authUser);
   }
 }
