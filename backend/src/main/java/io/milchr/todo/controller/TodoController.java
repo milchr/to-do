@@ -8,7 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 @Slf4j
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*", maxAge = 1800)
 @RestController
 @RequestMapping("api/todoItem")
 @RequiredArgsConstructor

@@ -4,4 +4,6 @@ import io.milchr.todo.model.AuthUser;
 
 public interface IAuthService {
     void register(AuthUser authUser);
+
+    AuthUser authenticate(AuthUser authUser);
 }
