@@ -12,7 +12,7 @@ public class UserEntity {
     @GeneratedValue
     private Long id;
 
-    @Column(name = "LOGIN")
+    @Column(name = "LOGIN", unique = true)
     private String login;
 
     @Column(name = "PASSWORD")

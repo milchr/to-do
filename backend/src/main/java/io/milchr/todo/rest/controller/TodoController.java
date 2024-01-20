@@ -1,4 +1,4 @@
-package io.milchr.todo.controller;
+package io.milchr.todo.rest.controller;
 
 import io.milchr.todo.facade.TodoItemFacade;
 import io.milchr.todo.model.TodoItem;

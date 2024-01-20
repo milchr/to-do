@@ -13,8 +13,10 @@ public class AuthUser {
     @Schema(description = "Username", example = "user1")
     private String username;
 
-    @NotNull
     @Schema(description = "user password")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
+
+    @Schema(description = "token")
+    private String token;
 }
