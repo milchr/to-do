@@ -19,4 +19,10 @@ export class AuthService {
   public authenticate(authUser: AuthUser): Observable<AuthUser> {
     return this.http.post<AuthUser>(`${this.apiServerUrl}/auth/authenticate`, authUser);
   }
+
+  public logout(authUser: AuthUser): Observable<AuthUser> {
+    console.log("logout");
+    console.log(authUser);
+    return this.http.post<AuthUser>(`${this.apiServerUrl}/auth/logout`, authUser);
+  }
 }

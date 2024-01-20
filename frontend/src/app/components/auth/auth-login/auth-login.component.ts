@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { TokenStorageService } from '../../../services/token-storage.service';
 
 @Component({
   selector: 'app-auth-login',
@@ -22,7 +23,15 @@ export class AuthLoginComponent {
     password: null
   };
 
-  constructor(private authService: AuthService, private router: Router) {
+  isLoggedIn = false;
+
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService, private router: Router) {
+  }
+
+  ngOnInit(): void {
+    if (this.tokenStorage.getToken()) {
+      this.isLoggedIn = true;
+    }
   }
 
   onSubmit(): void {
@@ -38,14 +47,21 @@ export class AuthLoginComponent {
     this.authService.authenticate(authUser).subscribe({
       next: response => {
         const user: AuthUser = response;
+        this.tokenStorage.saveToken(user.token);
+        this.tokenStorage.saveUser(user);
+        this.isLoggedIn = true;
         this.form = null;
-        this.router.navigate(['/tasks']);
+        this.reloadPage();
       },
       error: err => {
         alert(err.message);
         this.form = null;
       }
     });
+  }
+
+  reloadPage(): void {
+    window.location.reload();
   }
 
 }

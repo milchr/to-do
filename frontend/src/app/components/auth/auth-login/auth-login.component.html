@@ -1,7 +1,7 @@
 <div class="col-md-4">
     <div class="card card-container">
       <h1>Zaloguj się</h1>
-      <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate class="form-signin">
+      <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate class="form-signin">
         <div class="form-group">
           <input type="text" class="form-control" name="username" [(ngModel)]="form.username" required #username="ngModel" placeholder="Nazwa użytkownika"/>
           <div
