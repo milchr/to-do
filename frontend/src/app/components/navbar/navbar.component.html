@@ -1,12 +1,15 @@
-<nav class="navbar navbar-expand navbar-dark bg-dark">
-    <div class="navbar-logo">
+<nav class="navbar navbar-expand navbar-dark bg-dark" id="navigation-bar">
+    <div class="navbar-logo" id="app-name">
         <a class="navbar-brand" href="#">To-Do </a>
     </div>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
+      <div class="navbar-nav-wrapper">
+        <ul class="navbar-nav me-auto">
           <li class="nav-item active">
             <a class="nav-link" href="/tasks">Tasks</a>
           </li>
+        </ul>
+        <ul class="navbar-nav justify-content-end">
           <li class="nav-item" *ngIf="!isLoggedIn">
             <a class="nav-link" href="/sign_in">Login</a>
           </li>
@@ -17,5 +20,6 @@
             <a class="nav-link" (click)="logout()">Logout</a>
           </li>
         </ul>
-    </div>
+      </div>
+    </div> 
   </nav>

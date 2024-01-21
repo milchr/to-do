@@ -1,3 +1,38 @@
+.page-title {
+    text-align: center;
+    margin-top: 1em;
+}
+
 .task {
     border-style: solid;
+    margin-bottom: 1em;
+    /* text-align: center; */
+}
+.task-title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#task-content {
+    display: inline-block;
+    margin: 2em 1em 1em 2em;
+}
+
+#btn {
+    -webkit-appearance: button;
+    appearance: none;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 6px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-style:  solid;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#task-content:not(:first-child) {
+    float: right;
 }

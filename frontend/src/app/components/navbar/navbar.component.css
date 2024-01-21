@@ -1,0 +1,14 @@
+#navigation-bar {
+    padding: 1em;
+    font-size: 16px;
+}
+
+.navbar-nav-wrapper {
+    display: flex;
+    flex: 1 0 100%;
+    align-items: center;  
+}
+
+#app-name {
+    margin-left: 1em;
+}
