@@ -33,7 +33,7 @@ public class TodoController {
         return todoItemFacade.createTodoItem(todoItem);
     }
 
-    @PatchMapping
+    @PatchMapping("{id}")
     public TodoItem updateTodoItem(@RequestBody TodoItem todoItem) {
         log.info("updateTodoItem invoked");
         return todoItemFacade.updateTodoItem(todoItem);
