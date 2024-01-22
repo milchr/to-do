@@ -1,8 +1,9 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { TokenStorageService } from '../../services/token-storage.service';
 import { AuthService } from '../../services/auth.service';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'navbar',
@@ -16,7 +17,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private authService: AuthService ,private tokenStorageService: TokenStorageService) { }
+  constructor(private authService: AuthService,private tokenStorageService: TokenStorageService) { }
 
   isLoggedIn = false;
 
@@ -31,7 +32,7 @@ export class NavbarComponent implements OnInit {
         console.log(response);
       },
       error: err => {
-        alert(err.message);
+        // alert(err.message);
         console.log(err);
       }
     });

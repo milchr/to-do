@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { AuthUser } from '../../../models/auth-user';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
+import { TokenStorageService } from '../../../services/token-storage.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { TokenStorageService } from '../../../services/token-storage.service';
 
 @Component({
   selector: 'app-auth-login',
@@ -52,12 +52,14 @@ export class AuthLoginComponent {
         this.isLoggedIn = true;
         this.form = null;
         this.reloadPage();
+
       },
       error: err => {
         alert(err.message);
         this.form = null;
       }
     });
+    this.router.navigate(['/tasks']);
   }
 
   reloadPage(): void {

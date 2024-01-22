@@ -15,6 +15,7 @@ import { AuthLoginComponent } from './components/auth/auth-login/auth-login.comp
 import { AuthService } from './services/auth.service';
 import { TokenStorageService } from './services/token-storage.service';
 import { EditTodoItemComponent } from './components/todo-item/edit-todo-item/edit-todo-item.component';
+import { AppRoutingModule } from './app-routing-module';
 
 @NgModule({
     declarations: [
@@ -31,7 +32,8 @@ import { EditTodoItemComponent } from './components/todo-item/edit-todo-item/edi
         BrowserModule,
         HttpClientModule,
         FormsModule,
-        MatCardModule
+        MatCardModule,
+        AppRoutingModule
       ],
     providers: [
         TodoItemService,

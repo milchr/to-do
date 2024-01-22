@@ -9,49 +9,39 @@ const USER_KEY = 'auth-user';
   providedIn: 'root'
 })
 export class TokenStorageService {
-  constructor(@Inject(PLATFORM_ID)private platformId: any) { }
+  constructor() { }
 
   signOut(): void {
-    if (isPlatformBrowser(this.platformId)) { 
-         window.sessionStorage.clear();
-    }
+     window.sessionStorage.clear();
   }
 
   public saveToken(token: string): void {
-    if (isPlatformBrowser(this.platformId)) { 
-        window.sessionStorage.removeItem(TOKEN_KEY);
-        window.sessionStorage.setItem(TOKEN_KEY, token);
-    }
+    window.sessionStorage.removeItem(TOKEN_KEY);
+    window.sessionStorage.setItem(TOKEN_KEY, token);
+    
   }
 
   public getToken(): string | null {
-    if (isPlatformBrowser(this.platformId)) { 
-        return window.sessionStorage.getItem(TOKEN_KEY);
-    }
-    return null;
+    return window.sessionStorage.getItem(TOKEN_KEY);
   }
 
   public saveUser(user: any): void {
-    if (isPlatformBrowser(this.platformId)) { 
-        window.sessionStorage.removeItem(USER_KEY);
-        window.sessionStorage.setItem(USER_KEY, JSON.stringify(user));
-    }
+      window.sessionStorage.removeItem(USER_KEY);
+      window.sessionStorage.setItem(USER_KEY, JSON.stringify(user));
   }
 
   public getUser(): AuthUser {
-    if (isPlatformBrowser(this.platformId))  {
-        const userKey = window.sessionStorage.getItem(USER_KEY);
-        console.log(userKey);
-        if (userKey) {
-            const obj = JSON.parse(userKey);
-            const user = {} as AuthUser;
-            user.username = obj.username;
-            user.token = obj.token;
+    const userKey = window.sessionStorage.getItem(USER_KEY);
+    console.log(userKey);
+    if (userKey) {
+        const obj = JSON.parse(userKey);
+        const user = {} as AuthUser;
+        user.username = obj.username;
+        user.token = obj.token;
 
-            return user;
-        }
+        return user;
     }
-
+    
     return {} as AuthUser;
   }
 }

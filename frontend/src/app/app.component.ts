@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
+import { TokenStorageService } from './services/token-storage.service';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { TokenStorageService } from './services/token-storage.service';
+import { TodoItemComponent } from './components/todo-item/todo-item.component';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, NavbarComponent],
+  imports: [CommonModule, RouterOutlet, NavbarComponent, TodoItemComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

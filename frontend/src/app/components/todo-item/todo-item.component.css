@@ -10,6 +10,10 @@
     background-color: rgb(235, 235, 235);
 }
 
+#add-task {
+    margin-bottom: 1em;
+}
+
 .task-title {
     font-weight: bold;
     font-size: 18px;

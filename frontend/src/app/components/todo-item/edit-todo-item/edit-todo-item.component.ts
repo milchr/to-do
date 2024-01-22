@@ -4,6 +4,8 @@ import { TodoItemService } from '../../../services/todo-item.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { TokenStorageService } from '../../../services/token-storage.service';
+import { AuthUser } from '../../../models/auth-user';
 
 @Component({
   selector: 'app-edit-todo-item',
@@ -23,7 +25,11 @@ export class EditTodoItemComponent implements OnInit {
     description: null
   };
  
-  constructor(private todoItemService: TodoItemService, private router: Router,  private activated: ActivatedRoute) {
+  constructor(
+    private todoItemService: TodoItemService, private router: Router,
+    private activated: ActivatedRoute,
+    private tokenStorageService:TokenStorageService
+    ) {
   
    }
   
@@ -38,12 +44,12 @@ export class EditTodoItemComponent implements OnInit {
     todoItem.title = title;
     todoItem.description = description;
     console.log(todoItem);
-    this.updateTodoItem(todoItem);
+    this.updateTodoItem(todoItem, this.tokenStorageService.getUser());
   }
 
    
-  public updateTodoItem(todoItem: TodoItem): void {
-    this.todoItemService.updateTodoItem(todoItem).subscribe({
+  public updateTodoItem(todoItem: TodoItem, user: AuthUser): void {
+    this.todoItemService.updateTodoItem(todoItem, user).subscribe({
       next: response => {
         const item: TodoItem = response;
         console.log(item);

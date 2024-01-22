@@ -6,7 +6,7 @@
 
     <div class="row">
       <div class="col-6">
-         <button class="btn btn-secondary">
+         <button class="btn btn-secondary" *ngIf="isLoggedIn" id="add-task">
                <a href="/new_task" class="nav-link" routerLink="../new_task">Add task</a>
          </button>
       </div>
@@ -21,7 +21,7 @@
                      <p>{{ item.description }}</p>
                      <p>{{ item.done }}</p>
                   </div>
-                  <div class="col-3" id="task-content">
+                  <div class="col-3" id="task-content" *ngIf="isLoggedIn">
                      <div class="form-group">
                         <a class="btn btn-primary" href="edit_task" routerLink="../edit_task/{{item.id}}" id="btn">Edit</a>
                         <button class="btn btn-danger" (click)="onDelete(item.id)" id="btn">Delete</button>
