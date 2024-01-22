@@ -5,9 +5,11 @@
 
 .task {
     border-style: solid;
+    border-color: rgb(107, 107, 107);
     margin-bottom: 1em;
-    /* text-align: center; */
+    background-color: rgb(235, 235, 235);
 }
+
 .task-title {
     font-weight: bold;
     font-size: 18px;

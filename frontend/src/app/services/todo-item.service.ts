@@ -27,4 +27,13 @@ export class TodoItemService {
   public createTodoItem(todoItem: TodoItem): Observable<TodoItem> {
     return this.http.post<TodoItem>(`${this.apiServerUrl}/api/todoItem`, todoItem);
   }
+
+  public updateTodoItem(todoItem: TodoItem): Observable<TodoItem> {
+    console.log("updateTodoItem");
+    return this.http.patch<TodoItem>(`${this.apiServerUrl}/api/todoItem/${todoItem.id}`, todoItem);
+  }
+
+  public deleteTodoItem(id: Number): Observable<TodoItem> {
+    return this.http.delete<any>(`${this.apiServerUrl}/api/todoItem/${id}`);
+  }
 }

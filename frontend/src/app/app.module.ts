@@ -14,6 +14,7 @@ import { AuthRegisterComponent } from './components/auth/auth-register/auth-regi
 import { AuthLoginComponent } from './components/auth/auth-login/auth-login.component';
 import { AuthService } from './services/auth.service';
 import { TokenStorageService } from './services/token-storage.service';
+import { EditTodoItemComponent } from './components/todo-item/edit-todo-item/edit-todo-item.component';
 
 @NgModule({
     declarations: [
@@ -23,7 +24,8 @@ import { TokenStorageService } from './services/token-storage.service';
         TodoItemComponent,
         NavbarComponent,
         AuthRegisterComponent,
-        AuthLoginComponent
+        AuthLoginComponent,
+        EditTodoItemComponent
       ],
     imports: [
         BrowserModule,
