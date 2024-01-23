@@ -1,0 +1,24 @@
+.container {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    background-color: white;
+    max-width: 1024px;
+    min-height: 100%; 
+	margin: 0 auto !important; 
+	float: none !important; 
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    margin: 1em, 1em, 1em, 1em;
+}
+
+#loginbtn {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}

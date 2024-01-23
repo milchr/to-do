@@ -5,13 +5,15 @@ import { TokenStorageService } from '../../services/token-storage.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AuthUser } from '../../models/auth-user';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-todo-item', 
   standalone: true,
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   templateUrl: './todo-item.component.html',
   styleUrl: './todo-item.component.css'
@@ -33,11 +35,17 @@ export class TodoItemComponent implements OnInit {
     this.deleteTodoItem(id, this.tokenStorageService.getUser());
   }
 
+  changeStatus(item: TodoItem, values:any): void {
+    item.done = values.currentTarget.checked;
+    this.changeTodoItemStatus(item, this.tokenStorageService.getUser());
+  }
+
   public getTodoItemsPagination(user: AuthUser): void {
     this.todoItemService.getTodoItems(user).subscribe({
       next: response => {
         const { content } = response;
         this.todoItems = content;
+        console.log(this.todoItems);
       },
       error: err => console.error('Observable emitted an error: ' + err),
     })
@@ -47,6 +55,15 @@ export class TodoItemComponent implements OnInit {
     this.todoItemService.deleteTodoItem(id, user).subscribe({
       next: response => {
         window.location.reload();
+      },
+      error: err => console.error('Observable emitted an error: ' + err),
+    })
+  }
+
+  public changeTodoItemStatus(item: TodoItem, user:AuthUser) {
+    this.todoItemService.updateTodoItem(item, user).subscribe({
+      next: response => {
+        this.getTodoItemsPagination(user)
       },
       error: err => console.error('Observable emitted an error: ' + err),
     })

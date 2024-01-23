@@ -42,3 +42,18 @@
 #task-content:not(:first-child) {
     float: right;
 }
+
+.task-content-wrapper {
+    display: flex;
+    width: 100%;
+}
+
+#task-description{
+    width: 80%;
+}
+
+#checkbox {
+    height: 25px;
+    width: 25px;
+    vertical-align: middle
+}

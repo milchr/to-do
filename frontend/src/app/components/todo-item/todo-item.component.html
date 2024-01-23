@@ -17,9 +17,17 @@
             <div class="task">
                <div class="col-12" id="task-body">
                   <div class="col-7" id="task-content">
-                     <p class="task-title">{{ item.title }}</p>
-                     <p>{{ item.description }}</p>
-                     <p>{{ item.done }}</p>
+                     <div class="task-content-wrapper">
+                        <div id="task-description">
+                           <p class="task-title">{{ item.title }}</p>
+                           <p>{{ item.description }}</p>
+                        </div>
+                        <div id="task-status">
+                           <label> Completed
+                              <input type="checkbox" [disabled]="!isLoggedIn ? true : false"  (change)="changeStatus(item, $event)" [(ngModel)]="item.done" id="checkbox">
+                           </label>
+                        </div>
+                     </div>
                   </div>
                   <div class="col-3" id="task-content" *ngIf="isLoggedIn">
                      <div class="form-group">
