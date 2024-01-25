@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 @Slf4j
@@ -22,7 +23,7 @@ public class TodoItemService implements ITodoItemService {
 
     @Override
     public Page<TodoItemEntity> findPage(Integer pageNumber) {
-        return todoItemRepository.findAll(PageRequest.of(pageNumber != null ? pageNumber : 0, 10));
+        return todoItemRepository.findAll(PageRequest.of(pageNumber != null ? pageNumber : 0, 10, Sort.by(Sort.Direction.DESC, "id")));
     }
 
     @Override
