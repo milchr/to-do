@@ -1,6 +1,5 @@
 package io.milchr.todo.facade;
 
-import io.milchr.todo.dto.TodoItemDto;
 import io.milchr.todo.entity.TodoItemEntity;
 import io.milchr.todo.mapper.TodoItemMapper;
 import io.milchr.todo.model.TodoItem;

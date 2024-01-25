@@ -4,10 +4,11 @@ import io.milchr.todo.entity.auth.UserEntity;
 import io.milchr.todo.model.AuthUser;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.ReportingPolicy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public abstract class UserMapper {
     @Autowired
     PasswordEncoder passwordEncoder;
